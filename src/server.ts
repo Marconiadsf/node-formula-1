@@ -5,6 +5,7 @@ const server = fastify({ logger: true });
 
 server.register(cors, {
   origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 });
 
 const teams = [
