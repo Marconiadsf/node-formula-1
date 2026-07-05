@@ -44,9 +44,16 @@ interface DriverParams {
   id: string;
 }
 
-server.get<{ Params: DriverParams }>(
-  "/drivers/:id",
-  async (request, response) => {
+const driverParamsSchema = {
+  type: "object",
+  properties: {
+    id: { type: "string", pattern: "^[0-9]+$" },
+  },
+  required: ["id"],
+};
+
+server.get<{ Params: DriverParams }>
+  ("/drivers/:id", { schema: { params: driverParamsSchema } }, async (request, response) => {
     const id = parseInt(request.params.id);
     const driver = drivers.find((d) => d.id === id);
 
