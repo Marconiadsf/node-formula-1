@@ -58,6 +58,10 @@ server.get<{ Params: DriverParams }>(
   }
 );
 
-server.listen({ port: 3333 }, () => {
-  console.log("Server init");
+server.listen({ port: 3333 }, (err, address) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log(`Server ouvindo em ${address}`);
 });
