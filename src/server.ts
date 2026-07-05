@@ -2,6 +2,7 @@ import fastify from "fastify";
 import cors from "@fastify/cors";
 
 const server = fastify({ logger: true });
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3333;
 
 server.register(cors, {
   origin: "*",
@@ -59,7 +60,7 @@ server.get<{ Params: DriverParams }>(
   }
 );
 
-server.listen({ port: 3333 }, (err, address) => {
+server.listen({ port }, (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);
