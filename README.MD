@@ -1,81 +1,116 @@
 <div align="center">
-
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
+  <img src="./.github/assets/f1-car-banner.png" alt="Formula 1 car illustration" height="200">
+  <h1 align="center"><strong>NODE FORMULA 1 API</strong></h1>
   <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
+    API REST simples em <b>Node.js</b> + <b>TypeScript</b> com <b>Fastify</b>,
+    servindo dados de equipes e pilotos de Fórmula 1.<br>
+    Desafio de projeto da <a href="https://www.dio.me">Digital Innovation One (DIO)</a>.
   </p>
-
 </div>
 
 <br />
 
-  <!-- Badges -->
 <div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+
+[![TypeScript version][ts-badge]][typescript]
+[![Node.js version][nodejs-badge]][nodejs]
+[![Fastify version][fastify-badge]][fastify]
 
 </div>
 
-# 🚀 Technologies
+## 📖 Sobre o projeto
 
-This code source was developed with the following items:
+Este repositório é um fork do projeto [`node-formula-1`][dio-repo], desenvolvido durante a aula da trilha de back-end da DIO. A partir do código apresentado em aula, o projeto foi atualizado e evoluído com melhorias de configuração, tratamento de erros e validação de dados.
 
-### 📦 Dependencies
+O código original é, por sua vez, baseado no boilerplate [`node-blue-boilerplate`][boilerplate-repo], de [Felipe Aguiar][felipe-github].
 
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
+## 🚀 Tecnologias
 
-### 📄 Files
+- [TypeScript][typescript-npm] — superset de JavaScript com tipagem estática
+- [Fastify][fastify-npm] — framework web rápido e de baixo overhead
+- [@fastify/cors][fastify-cors-npm] — plugin de CORS para Fastify
+- [tsx][tsx-npm] — executa TypeScript diretamente no Node.js
+- [tsup][tsup-npm] — empacota TypeScript sem configuração, com esbuild
 
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
+## 📄 Endpoints
 
-### ⚡ Scripts
+| Método | Rota           | Descrição                                  |
+| ------ | -------------- | ------------------------------------------- |
+| GET    | `/teams`       | Lista todas as equipes de F1                |
+| GET    | `/drivers`     | Lista todos os pilotos                      |
+| GET    | `/drivers/:id` | Busca um piloto específico pelo `id`        |
 
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
+## ⚡ Scripts
 
-# 👨‍💻 How To Use
+- `npm run start:dev` — roda o servidor em modo desenvolvimento, com variáveis de ambiente do `.env`
+- `npm run start:watch` — roda o servidor com reload automático ao salvar arquivos
+- `npm run dist` — compila os arquivos TypeScript para JavaScript, na pasta `dist`
+- `npm run start:dist` — compila e roda a versão compilada do projeto
 
-click in **[Use this template]** OR
+## 👨‍💻 Como usar
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
+Você vai precisar de [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) e [npm v10+](https://nodejs.org/en/) instalados.
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
+# Clone este repositório
+$ git clone https://github.com/Marconiadsf/node-formula-1
 
-# Go into the repository
-$ cd node-blue-boilerplate
+# Entre na pasta do projeto
+$ cd node-formula-1
 
-# Install dependencies
+# Instale as dependências
 $ npm install
+
+# Configure a porta do servidor (opcional, padrão 3333)
+$ echo "PORT=3333" > .env
+
+# Rode o servidor em modo desenvolvimento
+$ npm run start:dev
 ```
+
+O servidor sobe por padrão em `http://localhost:3333`.
+
+## 🛠️ O que foi feito neste fork
+
+A partir do código apresentado em aula, este repositório recebeu as seguintes melhorias:
+
+- **Atualização de dependências**: reinstalação de pacotes para versões mais recentes compatíveis, resolvendo desatualização do boilerplate original
+- **Correção de compatibilidade do CORS**: ajuste do `@fastify/cors` para funcionar com o upgrade de major version do Fastify (v4 → v5)
+- **Tratamento de erro na inicialização do servidor**: o processo antes falhava silenciosamente caso o `listen()` desse erro
+- **Correção de dado duplicado**: dois pilotos compartilhavam o mesmo `id`, impedindo a busca correta de um deles
+- **Uso de variável de ambiente para a porta**: a porta do servidor, antes fixa no código, agora é configurável via `.env`
+- **Validação de schema**: a rota `/drivers/:id` agora valida o formato do parâmetro antes de processá-lo, retornando `400 Bad Request` para entradas inválidas
+- **Tratamento de erro centralizado**: erros não previstos passam por um handler único, evitando vazamento de detalhes internos e padronizando a resposta da API
+
+## 🔗 Links úteis
+
+- Repositório original da atividade (DIO): [digitalinnovationone/node-formula-1][dio-repo]
+- Boilerplate base: [felipeAguiarCode/node-blue-boilerplate][boilerplate-repo]
 
 ## Author
 
 | [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+| :---: |
+| Autor do boilerplate original |
 
-# Credits
+Fork e melhorias por [Marconiadsf](https://github.com/Marconiadsf).
 
-icons by [Pino Lamanna][dribble-icon]
+## Credits
+
+Ícones por [Pino Lamanna][dribble-icon]
 
 [typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
 [typescript-npm]: https://www.npmjs.com/package/typescript
+[ts-badge]: https://img.shields.io/badge/TypeScript-5.x-blue.svg
+[nodejs]: https://nodejs.org/
+[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
+[fastify]: https://fastify.dev/
+[fastify-npm]: https://www.npmjs.com/package/fastify
+[fastify-badge]: https://img.shields.io/badge/Fastify-5.x-black.svg
+[fastify-cors-npm]: https://www.npmjs.com/package/@fastify/cors
 [tsx-npm]: https://www.npmjs.com/package/tsx
 [tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+[dribble-icon]: https://dribbble.com/Schakalwal
+[dio-repo]: https://github.com/digitalinnovationone/node-formula-1
+[boilerplate-repo]: https://github.com/felipeAguiarCode/node-blue-boilerplate
+[felipe-github]: https://github.com/felipeAguiarCode
