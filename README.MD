@@ -39,6 +39,7 @@ A partir do código apresentado no curso, este fork recebeu atualizações de de
 | Método | Rota           | Descrição                                  |
 | ------ | -------------- | ------------------------------------------- |
 | GET    | `/teams`       | Lista todas as equipes de F1                |
+| GET    | `/teams/:id`   | Busca uma equipe específica pelo `id`       |
 | GET    | `/drivers`     | Lista todos os pilotos                      |
 | GET    | `/drivers/:id` | Busca um piloto específico pelo `id`        |
 
@@ -85,6 +86,7 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 - **Tratamento de erro centralizado**: erros não previstos passam por um handler único, evitando vazamento de detalhes internos e padronizando a resposta da API
 - **Padronização de respostas 404**: rotas inexistentes agora retornam um JSON padronizado via `setNotFoundHandler`, mantendo consistência com o rest da API
 - **Organização dos dados da API**: os dados mockados de equipes e pilotos foram extraídos do `server.ts` para arquivos dedicados em `src/data`, separando dados estáticos da configuração das rotas
+- **Busca de equipes por ID**: a rota `/teams/:id` permite consultar uma equipe específica pelo `id`, com validação de schema e resposta `404` quando não encontrada
 
 ## 🔗 Créditos e links úteis
 
