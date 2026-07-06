@@ -5,12 +5,11 @@ const teams = [
   { id: 4, name: "Ferrari", base: "Maranello, Italy" },
   { id: 5, name: "Alpine", base: "Enstone, United Kingdom" },
   { id: 6, name: "Aston Martin", base: "Silverstone, United Kingdom" },
-  { id: 7, name: "Alfa Romeo Racing", base: "Hinwil, Switzerland" },
-  { id: 8, name: "AlphaTauri", base: "Faenza, Italy" },
+  { id: 7, name: "Racing Bulls", base: "Faenza, Italy" },
+  { id: 8, name: "Haas F1 Team", base: "Kannapolis, United States" },
   { id: 9, name: "Williams", base: "Grove, United Kingdom" },
-  { id: 10, name: "Haas", base: "Kannapolis, United States" },
-  { id: 11, name: "Uralkali Haas F1 Team", base: "Banbury, United Kingdom" },
-  { id: 12, name: "Scuderia Toro Rosso", base: "Faenza, Italy" },
+  { id: 10, name: "Audi", base: "Hinwil, Switzerland" },
+  { id: 11, name: "Cadillac", base: "Silverstone, United Kingdom" },
 ];
 
 export default teams;
