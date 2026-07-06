@@ -3,7 +3,7 @@
   <h1 align="center"><strong>NODE FORMULA 1 API</strong></h1>
   <p align="center">
     API REST simples em <b>Node.js</b> + <b>TypeScript</b> com <b>Fastify</b>,
-    servindo dados de equipes e pilotos de Fórmula 1.<br>
+    servindo dados de equipes e pilotos de Fórmula 1 de 2026.<br>
     Desafio de projeto da <a href="https://www.dio.me">Digital Innovation One (DIO)</a>.
   </p>
 </div>
@@ -88,6 +88,7 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 - **Organização dos dados da API**: os dados mockados de equipes e pilotos foram extraídos do `server.ts` para arquivos dedicados em `src/data`, separando dados estáticos da configuração das rotas
 - **Busca de equipes por ID**: a rota `/teams/:id` permite consultar uma equipe específica pelo `id`, com validação de schema e resposta `404` quando não encontrada
 - **Atualização da base de pilotos**: a lista de pilotos foi ampliada de 3 para 22 nomes, seguindo a escalação oficial de equipes da Fórmula 1 em 2026
+- **Atualização da base de equipes**: a lista de equipes foi revisada para refletir a escalação oficial da Fórmula 1 em 2026, removendo nomes antigos e incluindo Racing Bulls, Audi e Cadillac
 
 ## 🔗 Créditos e links úteis
 
