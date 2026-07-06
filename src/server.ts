@@ -1,4 +1,4 @@
-import fastify from "fastify";
+import fastify, {FastifyError} from "fastify";
 import cors from "@fastify/cors";
 
 const server = fastify({ logger: true });
@@ -66,6 +66,18 @@ server.get<{ Params: DriverParams }>
     }
   }
 );
+
+
+server.setErrorHandler((error: FastifyError, request, response) => {
+  request.log.error(error);
+
+  if (error.statusCode) {
+    response.code(error.statusCode).send({ message: error.message });
+  } else {
+    response.code(500).send({ message: "Internal Server Error" });
+  }
+});
+
 
 server.listen({ port }, (err, address) => {
   if (err) {
