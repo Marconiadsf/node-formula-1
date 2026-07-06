@@ -12,10 +12,42 @@ server.register(cors, {
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 });
 
+//############ Teams Endpoints
+
 server.get("/teams", async (request, response) => {
   response.type("application/json").code(200);
   return { teams };
 });
+
+interface TeamsParams {
+  id: string;
+}
+
+const teamParamsSchema = {
+  type: "object",
+  properties: {
+    id: { type: "string", pattern: "^[0-9]+$" },
+  },
+  required: ["id"],
+};
+
+server.get<{ Params: TeamsParams }>
+  ("/teams/:id", { schema: { params: teamParamsSchema } }, async (request, response) => {
+    const id = parseInt(request.params.id);
+    const team = teams.find((d) => d.id === id);
+
+    if (!team) {
+      response.type("application/json").code(404);
+      return { message: "Team Not Found" };
+    } else {
+      response.type("application/json").code(200);
+      return { team };
+    }
+  }
+);
+
+
+//############ Drivers endpoints
 
 server.get("/drivers", async (request, response) => {
   response.type("application/json").code(200);
