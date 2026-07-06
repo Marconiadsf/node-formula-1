@@ -87,6 +87,7 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 - **Padronização de respostas 404**: rotas inexistentes agora retornam um JSON padronizado via `setNotFoundHandler`, mantendo consistência com o rest da API
 - **Organização dos dados da API**: os dados mockados de equipes e pilotos foram extraídos do `server.ts` para arquivos dedicados em `src/data`, separando dados estáticos da configuração das rotas
 - **Busca de equipes por ID**: a rota `/teams/:id` permite consultar uma equipe específica pelo `id`, com validação de schema e resposta `404` quando não encontrada
+- **Atualização da base de pilotos**: a lista de pilotos foi ampliada de 3 para 22 nomes, seguindo a escalação oficial de equipes da Fórmula 1 em 2026
 
 ## 🔗 Créditos e links úteis
 
@@ -94,6 +95,7 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 - Boilerplate base: [felipeAguiarCode/node-blue-boilerplate][boilerplate-repo]
 - Autor original: [Felipe Aguiar][felipe-github]
 - Fork e melhorias: [Marconiadsf](https://github.com/Marconiadsf)
+- Lista oficial de equipes e pilotos: [F1 Teams 2026][f1-teams]
 
 [typescript]: https://www.typescriptlang.org/
 [typescript-npm]: https://www.npmjs.com/package/typescript
@@ -110,3 +112,4 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 [dio]: https://www.dio.me
 [boilerplate-repo]: https://github.com/felipeAguiarCode/node-blue-boilerplate
 [felipe-github]: https://github.com/felipeAguiarCode
+[f1-teams]: https://www.formula1.com/en/teams
