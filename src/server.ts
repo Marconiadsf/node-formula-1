@@ -78,6 +78,9 @@ server.setErrorHandler((error: FastifyError, request, response) => {
   }
 });
 
+server.setNotFoundHandler((request, response) => {
+  response.code(404).send({ message: "Route Not Found" });
+});
 
 server.listen({ port }, (err, address) => {
   if (err) {
