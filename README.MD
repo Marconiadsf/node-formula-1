@@ -84,6 +84,7 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 - **Validação de schema**: a rota `/drivers/:id` agora valida o formato do parâmetro antes de processá-lo, retornando `400 Bad Request` para entradas inválidas
 - **Tratamento de erro centralizado**: erros não previstos passam por um handler único, evitando vazamento de detalhes internos e padronizando a resposta da API
 - **Padronização de respostas 404**: rotas inexistentes agora retornam um JSON padronizado via `setNotFoundHandler`, mantendo consistência com o rest da API
+- **Organização dos dados da API**: os dados mockados de equipes e pilotos foram extraídos do `server.ts` para arquivos dedicados em `src/data`, separando dados estáticos da configuração das rotas
 
 ## 🔗 Créditos e links úteis
 
