@@ -20,9 +20,11 @@
 
 ## 📖 Sobre o projeto
 
-Este repositório é um fork do projeto [`node-formula-1`][dio-repo], desenvolvido durante a aula da trilha de back-end da DIO. A partir do código apresentado em aula, o projeto foi atualizado e evoluído com melhorias de configuração, tratamento de erros e validação de dados.
+Este repositório é um fork do projeto [`node-formula-1`][dio-repo], de [Felipe Aguiar][felipe-github], desenvolvido como parte do lab project **"Criando uma minimal API da Fórmula 1 com Node.js e Fastify"**, da [Digital Innovation One (DIO)][dio].
 
-O código original é, por sua vez, baseado no boilerplate [`node-blue-boilerplate`][boilerplate-repo], de [Felipe Aguiar][felipe-github].
+O `node-formula-1` original, por sua vez, é construído sobre o boilerplate [`node-blue-boilerplate`][boilerplate-repo], também de Felipe Aguiar.
+
+A partir do código apresentado no curso, este fork recebeu atualizações de dependências, correções e melhorias — descritas na seção abaixo.
 
 ## 🚀 Tecnologias
 
@@ -82,22 +84,12 @@ A partir do código apresentado em aula, este repositório recebeu as seguintes 
 - **Validação de schema**: a rota `/drivers/:id` agora valida o formato do parâmetro antes de processá-lo, retornando `400 Bad Request` para entradas inválidas
 - **Tratamento de erro centralizado**: erros não previstos passam por um handler único, evitando vazamento de detalhes internos e padronizando a resposta da API
 
-## 🔗 Links úteis
+## 🔗 Créditos e links úteis
 
-- Repositório original da atividade (DIO): [digitalinnovationone/node-formula-1][dio-repo]
+- Repositório original: [digitalinnovationone/node-formula-1][dio-repo]
 - Boilerplate base: [felipeAguiarCode/node-blue-boilerplate][boilerplate-repo]
-
-## Author
-
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---: |
-| Autor do boilerplate original |
-
-Fork e melhorias por [Marconiadsf](https://github.com/Marconiadsf).
-
-## Credits
-
-Ícones por [Pino Lamanna][dribble-icon]
+- Autor original: [Felipe Aguiar][felipe-github]
+- Fork e melhorias: [Marconiadsf](https://github.com/Marconiadsf)
 
 [typescript]: https://www.typescriptlang.org/
 [typescript-npm]: https://www.npmjs.com/package/typescript
@@ -110,7 +102,7 @@ Fork e melhorias por [Marconiadsf](https://github.com/Marconiadsf).
 [fastify-cors-npm]: https://www.npmjs.com/package/@fastify/cors
 [tsx-npm]: https://www.npmjs.com/package/tsx
 [tsup-npm]: https://www.npmjs.com/package/tsup
-[dribble-icon]: https://dribbble.com/Schakalwal
 [dio-repo]: https://github.com/digitalinnovationone/node-formula-1
+[dio]: https://www.dio.me
 [boilerplate-repo]: https://github.com/felipeAguiarCode/node-blue-boilerplate
 [felipe-github]: https://github.com/felipeAguiarCode
